@@ -9,7 +9,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
             {/* Left side - Clerk SignIn Form */}
-            <div className="md:w-1/2 flex items-center justify-center p-8 bg-white">
+        <div className="md:w-1/2 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
