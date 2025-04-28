@@ -1,5 +1,3 @@
-// app/shop/page.tsx
-
 'use client';
 import React from 'react';
 
@@ -11,8 +9,8 @@ export default function Shop() {
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Example Cards */}
           <div className="rounded-lg bg-white p-6 shadow-md">
-            <h2 className="text-xl font-semibold mb-2">Welcome Back</h2> {/* Fixed apostrophe */}
-            <p className="text-gray-600">Here's a quick overview of your activities.</p>
+            <h2 className="text-xl font-semibold mb-2">Welcome Back&apos;s</h2> {/* Escaped apostrophe */}
+            <p className="text-gray-600">Here&apos;s a quick overview of your activities.</p>
           </div>
           <div className="rounded-lg bg-white p-6 shadow-md">
             <h2 className="text-xl font-semibold mb-2">Statistics</h2>
