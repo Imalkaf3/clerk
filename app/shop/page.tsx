@@ -7,7 +7,7 @@ export default function Shop() {
       <div className="w-full max-w-6xl">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Our Shop</h1>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Example Cards */}
+          {/* Example cards */}
           <div className="rounded-lg bg-white p-6 shadow-md">
             <h2 className="text-xl font-semibold mb-2">Welcome Back&apos;s</h2> {/* Escaped apostrophe */}
             <p className="text-gray-600">Here&apos;s a quick overview of your activities.</p>
