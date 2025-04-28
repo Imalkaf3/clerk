@@ -28,9 +28,7 @@ export default function HomePage() {
         {slides.map((src, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
           >
             <Image
               src={src}
@@ -42,7 +40,7 @@ export default function HomePage() {
           </div>
         ))}
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg text-center">
             Welcome to the Home Page
           </h1>
         </div>
@@ -69,7 +67,6 @@ export default function HomePage() {
           Get Started
         </button>
       </section>
-      
     </main>
   );
 }
