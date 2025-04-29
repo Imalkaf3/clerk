@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.18.0",
+    "@clerk/themes": "^2.2.36",
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
     "@react-three/postprocessing": "^3.0.4",
     "lucide-react": "^0.503.0",
     "next": "15.3.1",
+    "nodemailer": "^6.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^4.4.1",
