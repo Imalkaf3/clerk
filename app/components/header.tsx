@@ -1,12 +1,14 @@
+// components/header.tsx
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user } = useUser(); // <-- Added this here
 
   const handleMenuClose = () => setMenuOpen(false);  // Helper function to close menu
 
@@ -32,6 +34,13 @@ export default function Header() {
           <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition">
             Contact Us
           </Link>
+
+          {/* Show "Profile" link ONLY if user is logged in */}
+          {user && (
+            <Link href="/profile" className="text-gray-700 hover:text-gray-900 transition">
+              Profile
+            </Link>
+          )}
         </nav>
 
         {/* Auth Buttons */}
@@ -40,7 +49,7 @@ export default function Header() {
             <Link href="/sign-in">
               <button
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition cursor-pointer"
-                onClick={handleMenuClose} // Close menu when clicking
+                onClick={handleMenuClose}
               >
                 Sign In
               </button>
@@ -48,7 +57,7 @@ export default function Header() {
             <Link href="/sign-up">
               <button
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition cursor-pointer"
-                onClick={handleMenuClose} // Close menu when clicking
+                onClick={handleMenuClose}
               >
                 Sign Up
               </button>
@@ -75,38 +84,49 @@ export default function Header() {
           <Link
             href="/"
             className="text-gray-700 hover:text-gray-900 transition"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleMenuClose}
           >
             Home
           </Link>
           <Link
             href="/shop"
             className="text-gray-700 hover:text-gray-900 transition"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleMenuClose}
           >
             Shop
           </Link>
           <Link
             href="/about"
             className="text-gray-700 hover:text-gray-900 transition"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleMenuClose}
           >
             About Us
           </Link>
           <Link
             href="/contact"
             className="text-gray-700 hover:text-gray-900 transition"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleMenuClose}
           >
             Contact Us
           </Link>
+
+          {/* Show "Profile" link ONLY if user is logged in */}
+          {user && (
+            <Link
+              href="/profile"
+              className="text-gray-700 hover:text-gray-900 transition"
+              onClick={handleMenuClose}
+            >
+              Profile
+            </Link>
+          )}
 
           {/* Auth Buttons inside Mobile menu */}
           <SignedOut>
             <Link href="/sign-in">
               <button
                 className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition cursor-pointer"
-                onClick={handleMenuClose} // Close menu when clicking
+                onClick={handleMenuClose}
               >
                 Sign In
               </button>
@@ -114,7 +134,7 @@ export default function Header() {
             <Link href="/sign-up">
               <button
                 className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition cursor-pointer"
-                onClick={handleMenuClose} // Close menu when clicking
+                onClick={handleMenuClose}
               >
                 Sign Up
               </button>
